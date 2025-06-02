@@ -30,7 +30,7 @@ const FavoriteIcon = ({ item }) => {
       viewBox="0 0 26 26"
       stroke={isFavorited ? '#E44848' : 'black'}
       fill={isFavorited ? '#E44848' : 'none'}
-      strokeWidth="1.5"
+      strokeWidth="1.0"
       onClick={handleToggleFavorite}
       style={{ cursor: 'pointer', width: '26px', height: '24px' }}
     >

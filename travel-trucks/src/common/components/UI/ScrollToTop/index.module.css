@@ -1,0 +1,26 @@
+.scrollToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    transition: var(--trans);
+}
+
+.buttonScroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    background-color: var(--color-badge);
+    color: var(--color-white);
+    border: 2px solid var(--color-main);
+    border-radius: 100%;
+    box-shadow: 0 2px 5px var(--shadow-gray);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.buttonScroll:hover {
+    transform: scale(1.05);
+}

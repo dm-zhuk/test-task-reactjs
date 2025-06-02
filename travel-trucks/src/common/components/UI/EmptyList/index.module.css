@@ -1,0 +1,40 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 888px;
+    gap: 42px;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.noItemsText {
+    font-size: 18px;
+    text-align: center;
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 16px;
+    transform: scale(1.1);
+    transition: var(--trans);
+}
+
+.imageContainer:hover {
+    transform: scale(1);
+}
+
+.message {
+    padding-top: 10px;
+    width: 426px;
+}
