@@ -1,0 +1,44 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 72px 0 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('~/common/components/img/Hero_2x_squooshed.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 36px 0;
+    }
+}
+
+.hero {
+    position: absolute;
+    left: 64px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: calc(100% - 128px);
+    gap: 40px;
+    color: var(--color-input);
+    z-index: 1;
+}
+
+.heroTitle {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 16px;
+}
+
+.heroTitle h2 {
+    color: var(--color-input);
+}
