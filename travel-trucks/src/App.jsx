@@ -8,7 +8,7 @@ import SharedLayout from '~/common/components/layouts/SharedLayout/SharedLayout'
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('./pages/CatalogPage/CatalogPage'));
 const DetailsPage = lazy(() => import('./pages/DetailsPage/DetailsPage'));
-// const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 
 export const App = () => (
   <Suspense fallback={<Loader isLoading={true} />}>
@@ -18,7 +18,7 @@ export const App = () => (
         <Route index element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/catalog/:id" element={<DetailsPage />} />
-        {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

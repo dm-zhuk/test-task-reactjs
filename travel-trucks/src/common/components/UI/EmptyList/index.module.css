@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-width: 888px;
     gap: 42px;
+    margin-top: 32px;
 }
 
 .title {
@@ -20,12 +20,12 @@
 
 .imageContainer {
     width: 100%;
-    max-width: 520px;
-    height: auto;
+    width: 800px;
+    height: 320px;
     overflow: hidden;
     object-fit: cover;
     flex-shrink: 0;
-    border-radius: 16px;
+    border-radius: 20px;
     transform: scale(1.1);
     transition: var(--trans);
 }
