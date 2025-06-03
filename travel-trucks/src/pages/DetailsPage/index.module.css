@@ -1,0 +1,252 @@
+.selectedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 64px 80px;
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.titleWrapper h2 {
+    color: var(--color-main);
+    padding-top: 8px;
+}
+
+.itemsSubtitle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.itemSubtitle {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+}
+
+.pointer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.1px;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 28px 0;
+    max-width: 100%;
+    gap: 24px;
+}
+
+.imageContainer {
+    width: 292px;
+    height: 312px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-light-gray);
+    border-radius: 10px;
+}
+
+.imageContainer img {
+    height: 42vh;
+}
+
+.description {
+    margin-bottom: 60px;
+}
+
+.detailsContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-light-gray);
+    margin-bottom: 44px;
+}
+
+.tab {
+    padding: 0 0 24px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--color-main);
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    border-bottom: 5px solid transparent;
+    transition: border-bottom 0.3s;
+
+    &:first-child {
+        margin-right: 40px;
+    }
+
+    &.active {
+        border-bottom: 5px solid var(--color-btn);
+    }
+
+    min-width: initial;
+    max-width: initial;
+    justify-content: initial;
+    align-items: initial;
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+        background-color: transparent;
+        transform: none;
+        transition: none;
+    }
+}
+
+.tabContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.features {
+    display: flex;
+    width: 631px;
+    min-height: 578px;
+    padding: 44px 80px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--color-input);
+}
+
+.featuresDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.featuresList {
+    display: flex;
+    width: 527px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.vehicleDetails {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+    &>h3 {
+        padding-bottom: 24px;
+    }
+}
+
+.vehicleDetails li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+    color: var(--color-main);
+    border-top: 1px solid var(--color-light-gray);
+    align-self: stretch;
+}
+
+.detail {
+    background: var(--color-input);
+    box-shadow: 0 0.5px 2px var(--shadow-li);
+    transition: box-shadow var(--trans);
+}
+
+.reviews {
+    display: flex;
+    width: 631px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
+}
+
+.review {
+    color: var(--color-text);
+    border-radius: 8px;
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    color: var(--color-btn);
+    border-radius: 100%;
+    background-color: var(--color-badge);
+}
+
+.reviewAuthor {
+    font-weight: 500;
+}
+
+.reviewRating {
+    color: var(--color-btn);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .selectedContainer {
+        padding: 60px 32px;
+    }
+
+    .gallery {
+        gap: 24px;
+    }
+
+    .tabContentContainer {
+        flex-wrap: wrap;
+    }
+
+}
