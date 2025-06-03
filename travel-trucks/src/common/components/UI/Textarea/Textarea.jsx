@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styles from './index.module.css';
 
 export const Textarea = ({
@@ -38,17 +37,6 @@ export const Textarea = ({
       {error && <span className={styles.error}>{error}</span>}
     </div>
   );
-};
-
-Textarea.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  error: PropTypes.string,
-  rows: PropTypes.number,
 };
 
 export default Textarea;

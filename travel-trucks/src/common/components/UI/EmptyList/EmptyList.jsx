@@ -23,7 +23,7 @@ const EmptyList = ({ resetFilters }) => {
           <div className={styles.noItemsText}>
             <h2 className={styles.title}>Hard choice?</h2>
             <p className={styles.message}>
-              Keep selecting 💕 to review your favorite campervans later on
+              Keep selecting 💕 and review your favorite campervans later on!
             </p>
           </div>
           <Button

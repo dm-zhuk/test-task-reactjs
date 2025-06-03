@@ -1,19 +1,19 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CardFilter from '~/common/components/CardFilter/CardFilter';
-import CardFiltered from '~/common/components/CardContent/CardFiltered';
+import CardFilter from '../CardFilter/CardFilter';
+import CardFiltered from '../CardContent/CardFiltered';
 import { fetchData } from '~/store/dataSlice';
 import { getCampers, getIsLoading, getError } from '~/store/selectors';
 import { scrollTo } from '~/utils/scroller';
 import Pagination from '~/utils/context';
 import { paginate } from '~/utils/pagination';
-import Button from '~/common/components/Buttons/Button';
+import Button from '../Buttons/Button';
 import ErrorHandle from '~/utils/error';
-import EmptyList from '~/common/components/UI/EmptyList/EmptyList';
-import Loader from '~/common/components/UI/Loader/Loader';
-import styles from './CatalogPage/index.module.css';
+import EmptyList from '../UI/EmptyList/EmptyList';
+import Loader from '../UI/Loader/Loader';
+import styles from './index.module.css';
 
-const CamperList = ({ filterCondition }) => {
+const CardList = ({ filterCondition }) => {
   const dispatch = useDispatch();
   const { campers } = useSelector(getCampers);
   const isLoading = useSelector(getIsLoading);
@@ -76,4 +76,4 @@ const CamperList = ({ filterCondition }) => {
   );
 };
 
-export default CamperList;
+export default CardList;

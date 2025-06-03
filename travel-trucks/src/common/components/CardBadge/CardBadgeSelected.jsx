@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { featureIcons } from '~/utils/filterIcons';
 import { formatValue } from '~/utils/FormatLabel';
 import styles from './index.module.css';
@@ -17,10 +16,6 @@ export const CardBadgeSelected = ({ detail }) => {
       <span className={styles.value}>{formattedValue || badge.label}</span>
     </li>
   );
-};
-
-CardBadgeSelected.propTypes = {
-  detail: PropTypes.array.isRequired,
 };
 
 export default CardBadgeSelected;

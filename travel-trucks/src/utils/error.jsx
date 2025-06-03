@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const ErrorHandle = ({ error }) => {
   const errorStyle = {
     padding: '24px 0',
@@ -10,8 +8,8 @@ const ErrorHandle = ({ error }) => {
   return <>{error && <div style={errorStyle}>{error}</div>}</>;
 };
 
-ErrorHandle.propTypes = {
-  error: PropTypes.string,
+ErrorHandle.defaultProps = {
+  error: 'An unknown error occurred.',
 };
 
 export default ErrorHandle;

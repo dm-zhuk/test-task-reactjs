@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Star, StarGray } from '../common/components/icons/iconsIndex';
 
 const StarRating = ({ reviewer_rating }) => {
@@ -11,10 +10,6 @@ const StarRating = ({ reviewer_rating }) => {
       ))}
     </div>
   );
-};
-
-StarRating.propTypes = {
-  reviewer_rating: PropTypes.number.isRequired,
 };
 
 export default StarRating;

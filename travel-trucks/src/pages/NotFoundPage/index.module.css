@@ -1,0 +1,23 @@
+.container {
+    margin: 240px;
+}
+
+.title {
+    color: var(--color-btn);
+}
+
+.subtitle {
+    color: var(--color-main);
+    padding: 48px 0 120px;
+}
+
+.buttonLink {
+    border-radius: 200px;
+    border: none;
+    background-color: var(--color-btn);
+    color: var(--color-white);
+    padding: 16px 42px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: -0.08px;
+}

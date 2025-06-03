@@ -1,7 +1,7 @@
-import CamperList from '../CamperList';
+import CardList from '~/common/components/CardList/CardList';
 
 const CatalogPage = () => {
-  return <CamperList filterCondition={() => true} />;
+  return <CardList filterCondition={() => true} />;
 };
 
 export default CatalogPage;

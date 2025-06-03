@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { CardBadge } from '../CardBadge/CardBadge';
 import { Star } from '~/common/components/icons/iconsIndex';
@@ -50,23 +49,6 @@ const CardContent = ({ item }) => {
       </div>
     </section>
   );
-};
-
-CardContent.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    rating: PropTypes.number,
-    reviews: PropTypes.arrayOf(PropTypes.object),
-    location: PropTypes.string,
-    description: PropTypes.string,
-    gallery: PropTypes.arrayOf(
-      PropTypes.shape({
-        thumb: PropTypes.string,
-      })
-    ),
-  }).isRequired,
 };
 
 export default CardContent;

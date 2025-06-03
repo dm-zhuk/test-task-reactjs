@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styles from './index.module.css';
 
 export const Input = ({
@@ -37,17 +36,6 @@ export const Input = ({
       />
     </div>
   );
-};
-
-Input.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  error: PropTypes.string,
 };
 
 export default Input;

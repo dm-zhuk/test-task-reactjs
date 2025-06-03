@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import Button from '../common/components/Buttons/Button';
+import Button from '~/common/components/Buttons/Button';
+
 export const ErrorFallback = ({ error, resetErrorBoundary }) => (
   <div role="alert" style={{ margin: '120px' }}>
     <h2>Check this one out, mate:</h2>
