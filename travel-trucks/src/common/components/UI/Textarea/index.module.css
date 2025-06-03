@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+        font-family: Inter, sans-serif;
+        margin-bottom: 4px;
+    }
+
+    .error {
+        color: var(--color-btn);
+        font-size: 12px;
+    }
+}

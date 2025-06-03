@@ -8,6 +8,7 @@ import { CardBadgeSelected } from '~/common/components/CardBadge/CardBadgeSelect
 import { Star } from '~/common/components/icons/iconsIndex';
 import { placeholderImages } from '~/utils/placeholder';
 import StarRating from '~/utils/StarRating';
+import Booking from '~/common/components/Booking/Booking';
 import Loader from '~/common/components/UI/Loader/Loader';
 import { FormattedLocation, formatPrice } from '~/utils/FormatLabel';
 import ErrorHandle from '~/utils/error';
@@ -167,6 +168,7 @@ const DetailsPage = () => {
               </div>
             )}
           </div>
+          <Booking />
         </div>
       </section>
     </div>
