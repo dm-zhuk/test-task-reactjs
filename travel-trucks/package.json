@@ -6,17 +6,19 @@
   "homepage": "https://dm-zhuk.github.io/test-task-reactjs/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build --mode production",
+    "build:netlify": "vite build --mode production",
+    "start": "vite preview",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
-    "preview": "vite preview",
     "format": "prettier --write ."
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.9.0",
-    "react": "^18.0.0",
+    "react": "^18.3.1",
     "react-datepicker": "^8.4.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^18.3.1",
     "react-hot-toast": "^2.5.2",
     "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.2.0",
