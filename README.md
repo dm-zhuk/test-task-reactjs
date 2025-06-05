@@ -33,17 +33,21 @@ make bookings seamlessly.
 
 - **Multiple Pages**: The application consists of several key pages:
 
-  - **Home Page**: Features a banner with a primary call to action.
+  - **Home Page**: Features a banner with a primary call to action
+
     ![home](https://drive.google.com/uc?id=1B-7d0i0eGazATI6Obp04pKbspLlQEuo9)
     
 
-  - **Catalog Page**: Displays all available campers with filtering options.
+  - **Catalog Page**: Displays all available campers with filtering options
+
   ![catalog](https://drive.google.com/uc?id=1Mvawz7XLUhDZXecLlUm4IxeyerAA9gWP)
 
-- **Favorites Page**: (extra feature) Allows users to save campers for future review.
-  ![favorites](https://drive.google.com/uc?id=1ZdIU6iyE9PPFTuRlG7XAldQM6wft8Hi1)
+- **Favorites Page**: (extra feature) Allows users to save campers for future review
 
-- **Individual Camper Page**: Includes details, a photo gallery, user reviews, and a booking form.
+  ![favorites](https://drive.google.com/uc?id=1M4jIcWm0xrKP278KrfYZ56gpVdp5xZsF)
+
+- **Individual Camper Page**: Includes details, a photo gallery, user reviews, and a booking form
+
   ![details](https://drive.google.com/uc?id=1ZdIU6iyE9PPFTuRlG7XAldQM6wft8Hi1)
   ![features](https://drive.google.com/uc?id=1wZgl1csYVjkSYH3dhe6Dtya3TxyA_96o)
   ![reviews](https://drive.google.com/uc?id=1sxKs9jzeJxCNPqbUU5VBgTGyyZMHU_4Q)
