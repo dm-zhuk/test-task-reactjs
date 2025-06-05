@@ -51,8 +51,7 @@
 .gallery {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    flex-wrap: nowrap;
     margin: 28px 0;
     max-width: 100%;
     gap: 24px;
@@ -62,6 +61,7 @@
     width: 292px;
     height: 312px;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -70,7 +70,9 @@
 }
 
 .imageContainer img {
-    height: 42vh;
+    width: 100%;
+    object-fit: cover;
+    height: 44vh;
 }
 
 .description {
@@ -242,6 +244,7 @@
     }
 
     .gallery {
+        flex-wrap: wrap;
         gap: 24px;
     }
 

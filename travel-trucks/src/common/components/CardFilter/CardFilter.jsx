@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import Pagination from '~/utils/context';
 import Button from '../Buttons/Button';
@@ -12,37 +12,86 @@ import styles from './index.module.css';
 
 const CardFilter = ({ cards, setFilteredCards }) => {
   const { resetPage } = useContext(Pagination);
+  const formRef = useRef(null); // Reference to the form
+  const [selectedCity, setSelectedCity] = useState(''); // Track current city
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const filterParams = getFilterParams(e.target);
-    let filteredData = filterData(cards, filterParams);
-
-    resetPage();
-
-    setFilteredCards(filteredData);
-
-    const matchesCount = filteredData.length;
-    if (matchesCount > 0) {
-      toast.success(
-        `${matchesCount} match${
-          matchesCount > 1 ? 'es' : ''
-        } found for your selection`
-      );
+  // Reset filter parameters, optionally preserving the city input
+  const resetFilterParams = (form, preserveCity = false) => {
+    if (!preserveCity) {
+      form.reset();
     } else {
-      toast.error('No matches for your selection');
+      // Reset all inputs except the location input
+      const inputs = form.querySelectorAll('input:not(#location)');
+      inputs.forEach(input => {
+        if (input.type === 'checkbox' || input.type === 'radio') {
+          input.checked = false;
+        }
+      });
     }
-
-    resetFilterParams(e.target);
   };
 
-  const resetFilterParams = form => {
-    form.reset();
+  // Apply filters based on current form state
+  const applyFilters = (filterParams, isCitySearch = false) => {
+    if (selectedCity && !filterParams.location) {
+      filterParams.location = selectedCity;
+    }
+    const filteredData = filterData(cards, filterParams);
+
+    resetPage();
+    setFilteredCards(filteredData);
+
+    if (Object.keys(filterParams).length > 0) {
+      const matchesCount = filteredData.length;
+      if (matchesCount > 0) {
+        toast.success(
+          `${matchesCount} camper${matchesCount > 1 ? 's' : ''} found`
+        );
+      } else {
+        toast.error('No campers found for your selection');
+      }
+    } else if (isCitySearch) {
+      toast('Please enter a city or select filters', { icon: 'ℹ️' });
+    }
+  };
+
+  // Handle form submission ('Search' btn or 'Return' key)
+  const handleSubmit = e => {
+    e.preventDefault();
+    const locationInput = formRef.current.querySelector('#location');
+    const newCity = locationInput.value.trim();
+
+    // Get filter parameters before clearing input
+    const filterParams = getFilterParams(formRef.current);
+
+    if (newCity) {
+      setSelectedCity(newCity); // Update selected city
+      resetFilterParams(formRef.current, true); // Reset other filters
+      locationInput.value = ''; // Clear city input
+    }
+
+    applyFilters(filterParams, !!newCity);
+  };
+
+  // Handle 'Reset Filters' btn click (optional feature)
+  const handleReset = () => {
+    resetFilterParams(formRef.current);
+    setSelectedCity('');
+    setFilteredCards(cards);
+    resetPage();
+    toast.success('All filters now reset');
+  };
+
+  // Handle 'Return' key in the city input
+  const handleCityKeyDown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit(e);
+    }
   };
 
   return (
     <div className={styles.inputForm}>
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
           <label className={styles.label} htmlFor="location">
             Location
@@ -55,6 +104,7 @@ const CardFilter = ({ cards, setFilteredCards }) => {
               id="location"
               autoComplete="off"
               placeholder="City"
+              onKeyDown={handleCityKeyDown}
             />
           </div>
         </div>
@@ -82,7 +132,15 @@ const CardFilter = ({ cards, setFilteredCards }) => {
             </div>
           </div>
         </div>
-        <Button type="submit" text="Search" />
+        <div className={styles.buttonContainer}>
+          <Button type="submit" text="Search" />
+          <Button
+            type="button"
+            text="Reset Filters"
+            onClick={handleReset}
+            className={styles.resetBtn}
+          />
+        </div>
       </form>
     </div>
   );
