@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import styles from './SharedLayout.module.css';
 import { Logo } from '~/common/components/icons/iconsIndex';
+import styles from './SharedLayout.module.css';
 
 const SharedLayout = () => {
   return (

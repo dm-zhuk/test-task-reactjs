@@ -12,10 +12,9 @@ import styles from './index.module.css';
 
 const CardFilter = ({ cards, setFilteredCards }) => {
   const { resetPage } = useContext(Pagination);
-  const formRef = useRef(null); // Reference to the form
-  const [selectedCity, setSelectedCity] = useState(''); // Track current city
+  const formRef = useRef(null);
+  const [selectedCity, setSelectedCity] = useState('');
 
-  // Reset filter parameters, optionally preserving the city input
   const resetFilterParams = (form, preserveCity = false) => {
     if (!preserveCity) {
       form.reset();

@@ -1,11 +1,13 @@
 import { formatValue } from '~/utils/FormatLabel';
-import { badgeIcons } from '~/utils/filterIcons';
+import { badgeIcons, featureIcons } from '~/utils/filterIcons';
 import styles from './index.module.css';
 
-export const CardBadge = ({ detail }) => {
+export const CardBadge = ({ detail, iconSet = 'badgeIcons' }) => {
   const [key, value] = Array.isArray(detail) ? detail : ['', ''];
 
-  const badge = badgeIcons.find(({ name }) => name === key);
+  // Icon set selection based on iconSet prop
+  const icons = iconSet === 'featureIcons' ? featureIcons : badgeIcons;
+  const badge = icons.find(({ name }) => name === key);
 
   if (!badge || value === false) return null;
   const formattedValue = formatValue(value);

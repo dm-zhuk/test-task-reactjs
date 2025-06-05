@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://dm-zhuk.github.io/test-task-reactjs/",
-  "scripts": {
+   "scripts": {
     "dev": "vite",
     "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build --mode production",
     "build:netlify": "vite build --mode production",

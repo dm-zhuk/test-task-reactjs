@@ -24,10 +24,14 @@ export const fetchApi = {
     const params = new URLSearchParams(dataParams).toString();
     return fetchData({ method: 'GET', url: params ? `/?${params}` : '/' });
   },
+
   getCamperById: async id => fetchData({ method: 'GET', url: `/${id}` }),
+
   createData: async dataBody =>
     fetchData({ method: 'POST', url: '/', data: dataBody }),
+
   updateData: async (id, dataBody) =>
     fetchData({ method: 'PUT', url: `/${id}`, data: dataBody }),
+
   deleteData: async id => fetchData({ method: 'DELETE', url: `/${id}` }),
 };
