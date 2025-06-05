@@ -20,7 +20,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Configure the Redux store with the persisted reducer
+// Configure redux store with persisted reducer
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
@@ -31,5 +31,5 @@ export const store = configureStore({
     }),
 });
 
-// Manage the persistence of the store
+// Manage store persistence
 export const persistor = persistStore(store);

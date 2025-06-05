@@ -1,8 +1,11 @@
 import styles from '~/pages/DetailsPage/index.module.css';
 
-const Gallery = ({ images = [], placeholderImages, maxImages = 4 }) => {
+const Gallery = ({ images = [], placeholderImages = [], maxImages = 4 }) => {
   const renderImages = () => {
     const galleryImages = Array.isArray(images) ? images : [];
+    const safePlaceholderImages = Array.isArray(placeholderImages)
+      ? placeholderImages
+      : [];
     const placeholdersNeeded = maxImages - galleryImages.length;
 
     return [
@@ -20,7 +23,10 @@ const Gallery = ({ images = [], placeholderImages, maxImages = 4 }) => {
       }).map((_, index) => (
         <div key={`placeholder-${index}`} className={styles.imageContainer}>
           <img
-            src={placeholderImages[index]}
+            src={
+              safePlaceholderImages[index] ||
+              'https://www.gettyimages.com/detail/photo/close-up-of-a-broswer-address-bar-royalty-free-image/184146944?searchscope=image%2Cfilm'
+            }
             alt={`placeholder ${index + 1}`}
             className={styles.galleryImage}
           />

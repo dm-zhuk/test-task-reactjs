@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Emptic from '~/common/components/img/Emptic.jpg';
 import Loader from '~/common/components/UI/Loader/Loader';
 import Button from '~/common/components/Buttons/Button';
@@ -6,11 +7,15 @@ import styles from './index.module.css';
 
 const EmptyList = ({ resetFilters }) => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setLoading(true);
     resetFilters();
-    setTimeout(() => setLoading(false), 250);
+    setTimeout(() => {
+      setLoading(false);
+      navigate('/catalog');
+    }, 250);
   };
 
   return (

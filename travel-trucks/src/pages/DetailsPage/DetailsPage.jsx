@@ -10,6 +10,7 @@ import Loader from '~/common/components/UI/Loader/Loader';
 import { FormattedLocation, formatPrice } from '~/utils/FormatLabel';
 import ErrorHandle from '~/utils/error';
 import useCamperDetails from '~/hooks/useCamperDetails';
+import { placeholderImages } from '~/utils/placeholder';
 import styles from './index.module.css';
 
 const tabs = [
@@ -47,7 +48,10 @@ const DetailsPage = () => {
           </div>
           <h2>{formatPrice(selectedCamper.price)}</h2>
         </div>
-        <Gallery images={selectedCamper.gallery} />
+        <Gallery
+          images={selectedCamper.gallery}
+          placeholderImages={placeholderImages}
+        />
         <p className={styles.description}>{selectedCamper.description}</p>
       </section>
       <section className="detailsContainer">
