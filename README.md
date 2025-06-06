@@ -124,7 +124,7 @@ The design of the TravelTrucks application is guided by a UI Kit that includes:
 - **MockAPI**:
   [MockAPI Link](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers).
 - **Source Code**: [GitHub Repository](https://github.com/dm-zhuk/test-task-reactjs).
-- **Live Demo**: [netlify.com](.netlify.app).
+- **Live Demo**: [netlify.com](https://camper-ua.netlify.app/).
 
 ### Project Structure Overview
 
