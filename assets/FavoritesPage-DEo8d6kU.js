@@ -1,0 +1,1 @@
+import{e as r,j as e}from"./index-CQVx0Q8p.js";import{C as i}from"./CardList-q6RpJaeS.js";import{h as a}from"./CardBadge-1-HJHOD5.js";const c=()=>{const t=r(a),o=s=>t.includes(s.id);return e.jsx(i,{filterCondition:o})};export{c as default};
