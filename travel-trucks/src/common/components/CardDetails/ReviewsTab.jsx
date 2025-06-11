@@ -8,7 +8,7 @@ const ReviewsTab = ({ reviews = [] }) => (
         <div className={styles.reviewHeader}>
           <span className={styles.letter}>{review.reviewer_name[0]}</span>
           <div>
-            <h3 className={styles.reviewAuthor}>{review.reviewer_name}</h3>
+            <p className={styles.reviewerName}>{review.reviewer_name}</p>
             <span className={styles.reviewRating}>
               <StarRating reviewer_rating={review.reviewer_rating} />
             </span>
