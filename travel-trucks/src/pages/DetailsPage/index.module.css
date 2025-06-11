@@ -230,7 +230,11 @@
 }
 
 .reviewAuthor {
+    font-size: 16px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 1.6;
+    color: var(--Main, #101828);
 }
 
 .reviewRating {
